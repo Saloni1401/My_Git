@@ -1,0 +1,86 @@
+import datetime
+def gettime():
+    return datetime.datetime.now()
+
+def take(k):
+    if k ==1:
+        c=int(input(print("Enter 1 for Exercise and 2 for Food")))
+        if c == 1:
+            value= input("Enter here:")
+            with open('fm1.txt','a') as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Added successfully!")
+        elif c==2:
+            value=input("Enter here:")
+            with open('fm1food.txt','a') as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Added successfully!")
+    elif k ==2:
+        c = int(input(print("Enter 1 for Exercise and 2 for Food")))
+        if c == 1:
+            value = input("Enter here:")
+            with open('fm2.txt', 'a') as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Added successfully!")
+        elif c == 2:
+            value = input("Enter here:")
+            with open('fm2food.txt', 'a') as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Added successfully!")
+    elif k ==3:
+        c = int(input(print("Enter 1 for Exercise and 2 for Food")))
+        if c == 1:
+            value = input("Enter here:")
+            with open('fm3.txt', 'a') as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Added successfully!")
+        elif c == 2:
+            value = input("Enter here:")
+            with open('fm3food.txt', 'a') as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Added successfully!")
+    else:
+        print("plz enter valid input (saloni,shalini,hama)")
+def retrive(k):
+    if k ==1:
+        c=int(input(print("Enter 1 for Exercise and 2 for Food")))
+        if c == 1:
+            with open('fm1.txt') as op:
+                for i in op :
+                    print(i,end='')
+        elif c ==2:
+            with open('fm1food.txt') as op:
+                for i in op :
+                    print(i, end='')
+    elif k ==2:
+        c=int(input(print("Enter 1 for Exercise and 2 for Food")))
+        if c == 1:
+            with open('fm2.txt') as op:
+                for i in op :
+                    print(i,end='')
+        elif c ==2:
+            with open('fm2food.txt') as op:
+                for i in op :
+                    print(i, end='')
+
+    elif k ==3:
+        c = int(input(print("Enter 1 for Exercise and 2 for Food")))
+        if c == 1:
+            with open('fm3.txt') as op:
+                for i in op:
+                    print(i, end='')
+        elif c == 2:
+            with open('fm3food.txt') as op:
+                for i in op:
+                    print(i, end='')
+    else:
+        print("plz enter valid input (saloni,shalini,hama)")
+print("Welcome to Health Management System ")
+a=int(input("press 1 for logging the value and 2 for retrieve the value "))
+
+if a==1:
+    b = int(input("press 1 for saloni 2 for shalini 3 for hama "))
+    take(b)
+else:
+    b = int(input("press 1 for saloni 2 for shalini 3 for hama "))
+    retrive(b)
